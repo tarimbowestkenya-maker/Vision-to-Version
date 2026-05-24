@@ -1,8 +1,8 @@
-# DualForge — Victor + Moses
+# Vision-to-Version — Victor + Moses
 
 **We turn AI ideas into working code.**
 
-DualForge is a partnership between Victor (Business & Ideas) and Moses (Code & Execution). This is our portfolio and ideas showcase — built with Flask, deployed on Render.
+Vision-to-Version  is a partnership between Victor (Business & Ideas) and Moses (Code & Execution). This is our portfolio and ideas showcase — built with Flask, deployed on Render.
 
 
 
