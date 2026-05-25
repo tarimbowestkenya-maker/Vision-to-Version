@@ -6,6 +6,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+
+
+
+@app.route('/superkeeper-story')
+def superkeeper_story():
+    return render_template('superkeeper-story.html')
+
+
+
+
 # API endpoints for dynamic data (replace with database later)
 @app.route('/api/portfolio')
 def api_portfolio():

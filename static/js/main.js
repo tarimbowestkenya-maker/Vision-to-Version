@@ -58,6 +58,7 @@ function renderPortfolio(items) {
             <h3>${escapeHtml(item.title)}</h3>
             <p>${escapeHtml(item.description)}</p>
             <small>${escapeHtml(item.tech_stack || '')}</small>
+            ${item.live_url ? `<div class="card-links"><a href="${item.live_url}" target="_blank" class="card-link">Live Demo →</a></div>` : ''}
         </div>
     `).join('');
 }
@@ -103,6 +104,89 @@ function escapeHtml(str) {
     });
 }
 
+// ========== MODAL FUNCTIONALITY FOR SUPEREKEEPER STORY ==========
+
+// Get modal elements
+const modal = document.getElementById('storyModal');
+const closeBtn = document.querySelector('.close-modal');
+
+// Story content for Superkeeper
+const superkeeperStory = `
+    <div class="story-content">
+        <h1>📦 The Story Behind Superkeeper</h1>
+        <p class="lead">"We're not just building software. We're enabling dreams. Every shilling a business saves helps a family. Every minute saved creates opportunity."</p>
+        <p class="story-quote">— Moses Kipkorir Cheruiyot, Founder & CEO, Superkeeper</p>
+        
+        <h2>The Problem</h2>
+        <p>While working as a developer in Nairobi, Moses watched his aunt struggle with paper records at her vegetable stall. Records got lost in the rain. Hours were spent counting inventory manually. No way to track what sold best or what was missing.</p>
+        
+        <h2>The Frustration That Sparked a Solution</h2>
+        <p>"There has to be a better way. Technology should solve real problems, not create them," Moses thought. What started as a simple spreadsheet became a mission.</p>
+        
+        <h2>The Journey (2021-2025)</h2>
+        <p><strong>2021:</strong> Built first prototype for his aunt's stall. She saved 10+ hours weekly.</p>
+        <p><strong>2022:</strong> Three more shops asked to use it. Added stock tracking and sales reports.</p>
+        <p><strong>2023:</strong> Superkeeper officially launched. 50 businesses joined in first month.</p>
+        <p><strong>2024:</strong> Reached 500+ shops across Kenya. Added staff management features.</p>
+        <p><strong>2025:</strong> Helping thousands of small business owners digitize their operations.</p>
+        
+        <h2>The Impact</h2>
+        <p>Every shilling saved helps a family. Every minute saved creates opportunity. Superkeeper isn't just inventory software — it's a tool that enables dreams.</p>
+        
+        <h2>What's Next?</h2>
+        <p>Expanding to 10 more African countries by 2030. Adding accounting, invoicing, and supplier management. Building a community of empowered small business owners.</p>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://superkeeperapp-6isv.onrender.com/" target="_blank" class="cta-button" style="display: inline-block;">Try Superkeeper →</a>
+        </div>
+    </div>
+`;
+
+// Function to open modal with story
+function openStoryModal(storyId) {
+    if (storyId === 'superkeeper') {
+        const modalContent = document.getElementById('modal-story-content');
+        if (modalContent) {
+            modalContent.innerHTML = superkeeperStory;
+        }
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+}
+
+// Add event listeners to all story buttons
+function initStoryButtons() {
+    const storyButtons = document.querySelectorAll('.story-btn');
+    storyButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const storyId = this.getAttribute('data-story');
+            openStoryModal(storyId);
+        });
+    });
+}
+
+// Close modal when X is clicked
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Close modal when clicking outside content
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+});
+
 // Contact form handler
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -123,4 +207,7 @@ if (contactForm) {
 }
 
 // Load everything when page loads
-document.addEventListener('DOMContentLoaded', loadProjects);
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects();
+    initStoryButtons();
+});

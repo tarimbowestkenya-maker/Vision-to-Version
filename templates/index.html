@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}DualForge | Victor + Moses{% endblock %}
+{% block title %}Vision-to-Version | Victor + Moses{% endblock %}
 
 {% block content %}
 
@@ -40,7 +40,7 @@
     </div>
 </section>
 
-<!-- Scroll hint - NOW VISIBLE WITHOUT SCROLLING -->
+<!-- Scroll hint -->
 <div class="scroll-hint">
     ▼ Scroll down for portfolio & envisioned projects ▼
 </div>
@@ -49,19 +49,40 @@
 <section id="work" class="section">
     <div class="container">
         <h2 class="section-title">What we've built</h2>
-        <div class="portfolio-grid" id="portfolioGrid">
+        <div class="portfolio-grid">
+            
+            <!-- Superkeeper Card -->
             <div class="portfolio-card">
-                <h3>CareCrewKe</h3>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Superkeeper dashboard" class="card-screenshot">
+                <h3>📦 Superkeeper</h3>
+                <p>Inventory management for small shops in Kenya. Track stock, manage staff, see sales in real-time. 500+ businesses served.</p>
+                <small>Flask • SQLite • HTML/CSS/JS</small>
+                <div class="card-links">
+                    <a href="https://superkeeperapp-6isv.onrender.com/" target="_blank" class="card-link">Live Demo →</a>
+                    <button class="card-link story-btn" data-story="superkeeper">Read Story →</button>
+                </div>
+            </div>
+
+            <!-- CareCrewKe Card -->
+            <div class="portfolio-card">
+                <img src="{{ url_for('static', filename='images/carecrewlogo.png') }}" alt="CareCrewKe platform" class="card-screenshot">
+                <h3>👥 CareCrewKe</h3>
                 <p>AI-powered job platform with CV matching and smart recommendations.</p>
                 <small>Flask • AI • Firebase</small>
             </div>
+
+            <!-- CV Doctor Card -->
             <div class="portfolio-card">
-                <h3>CV Doctor</h3>
+                <img src="{{ url_for('static', filename='images/projects/cvdoctor.jpg') }}" alt="CV Doctor tool interface" class="card-screenshot">
+                <h3>📄 CV Doctor</h3>
                 <p>Intelligent CV enhancement tool that interviews and optimizes.</p>
                 <small>AI/NLP • REST API</small>
             </div>
+
+            <!-- Job Matching Engine Card -->
             <div class="portfolio-card">
-                <h3>Job Matching Engine</h3>
+                <img src="{{ url_for('static', filename='images/projects/jobmatching.jpg') }}" alt="Job matching engine visualization" class="card-screenshot">
+                <h3>⚡ Job Matching Engine</h3>
                 <p>Semantic search using vector embeddings and cosine similarity.</p>
                 <small>Python • ML • Firestore</small>
             </div>
@@ -100,7 +121,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <p>Have a project or idea? We're one message away.</p>
-                <p class="contact-email">hello@dualforge.com</p>
+                <p class="contact-email">hello@vision-to-version.com</p>
             </div>
             <form id="contactForm" class="contact-form">
                 <input type="text" placeholder="Your name" required>
@@ -112,9 +133,17 @@
     </div>
 </section>
 
+<!-- Modal for Superkeeper Story -->
+<div id="storyModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-story-content"></div>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer">
-    <p>© 2025 DualForge — Victor + Moses</p>
+    <p>© 2025 Vision-to-Version — Victor + Moses</p>
 </footer>
 
 {% endblock %}
