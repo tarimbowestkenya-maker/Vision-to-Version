@@ -1,0 +1,136 @@
+/* Modal Background - ALWAYS on top */
+.modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Modal Content Box - Dark Theme */
+.modal-content {
+  background-color: #1a1a2e !important;
+  padding: 30px;
+  width: 85%;
+  max-width: 750px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid #3b82f6;
+}
+
+/* Scrollbar styling for modal content */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+/* Close Button (X) */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+.close-modal:hover {
+  color: #3b82f6;
+  transform: scale(1.1);
+}
+
+/* Modal Headings */
+.modal-content h2 {
+  color: #3b82f6 !important;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #3b82f6;
+  font-size: 1.8rem;
+}
+
+.modal-content h3 {
+  color: #90cdf4 !important;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+/* Modal Paragraphs */
+.modal-content p {
+  color: #c0c0c0 !important;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Modal Lists */
+.modal-content ul {
+  margin: 12px 0 15px 20px;
+}
+
+.modal-content li {
+  color: #b0b0b0 !important;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Modal Links */
+.modal-content a {
+  color: #3b82f6 !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+  color: #60a5fa !important;
+}
+
+/* Strong/Bold text */
+.modal-content strong {
+  color: #90cdf4 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 92%;
+    padding: 20px;
+    max-height: 90vh;
+  }
+  
+  .close-modal {
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.1rem;
+  }
+}

@@ -1,40 +1,16 @@
-# Vision-to-Version — Victor + Moses
+# React + Vite
 
-**We turn AI ideas into working code.**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Vision-to-Version  is a partnership between Victor (Business & Ideas) and Moses (Code & Execution). This is our portfolio and ideas showcase — built with Flask, deployed on Render.
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## What makes us different
+## Expanding the ESLint configuration
 
-| | Victor | Moses |
-|---|--------|-------|
-| **Role** | AI Strategy & Product | LLM Engineering & Code |
-| **Superpower** | Market gaps, user psychology, selling | RAG pipelines, AI agents, deployment |
-| **Delivers** | The "why" and "what" | The "how" and "now" |
-
-Together: Your AI idea from 0 → 1 in weeks, not months.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Backend | Flask (Python) |
-| Frontend | HTML5, CSS3, Vanilla JS |
-| Deployment | Render.com |
-| Version Control | Git + GitHub |
-
----
-
-## Local Development
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/yourusername/dualforge.git
-cd dualforge
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
