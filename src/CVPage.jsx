@@ -9,14 +9,14 @@ function CVPage() {
         <p>Moses Kipkorir Cheruiyot — Python Developer & AI Specialist</p>
         <div className="cv-page-buttons">
           <a 
-            href="/assets/cv/Moses_Cheruiyot_CV.pdf" 
+            href="/Moses_Cheruiyot_CV.pdf" 
             download
             className="cv-download-btn"
           >
             📥 Download PDF
           </a>
           <a 
-            href="/assets/cv/Moses_Cheruiyot_CV.pdf" 
+            href="/Moses_Cheruiyot_CV.pdf" 
             target="_blank"
             rel="noopener noreferrer"
             className="cv-view-btn"
@@ -30,7 +30,7 @@ function CVPage() {
       </div>
       <div className="cv-embed-wrapper">
         <iframe 
-          src="/assets/cv/Moses_Cheruiyot_CV.pdf#toolbar=1" 
+          src="/Moses_Cheruiyot_CV.pdf#toolbar=1" 
           width="100%" 
           height="800px"
           title="Moses Cheruiyot CV"
